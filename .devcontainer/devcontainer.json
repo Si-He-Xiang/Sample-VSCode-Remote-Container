@@ -14,7 +14,7 @@
 		"--name=sample-python",
 		"-u", "vscode",
 		"-v","v-sample-python-vscode-server:/home/vscode/.vscode-server",
-		"-v","v-sample-python-vscode-server-insiders:/home/vscode/.vscode-server-insiders",
+		"-v","v-sample-python-vscode-server-insiders:/home/vscode/.vscode-server-insiders"
 	],
 
 	// Use 'settings' to set *default* container specific settings.json values on container create. 
@@ -29,11 +29,8 @@
 
 	// Specifies a command to run after the container is created
 	"postCreateCommand": [
-		"sudo pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/",
 		"if [ ! -d /workspace/Sample-VSCode-Remote-Container ]; then cd /workspace ; sudo git clone https://github.com/Si-He-Xiang/Sample-VSCode-Remote-Container.git ; sudo chown -R vscode:vscode ./Sample-VSCode-Remote-Container ;  fi",
-		"cd /workspace/Sample-VSCode-Remote-Container",
-		"git checkout feature/sample-python",
-	
+		"sudo pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/"
 	],
 
 	"extensions": [
