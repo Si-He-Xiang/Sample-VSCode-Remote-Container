@@ -1,0 +1,40 @@
+{
+	"name": "Python Sample",
+	"image": "sample-python",
+	"dockerFile": "Dockerfile",
+
+	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
+	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
+	// In this case, "--host 0.0.0.0 --port 9000" needs to be passed into Flask to make this happen.
+	"appPort": ["0.0.0.0:9000:9000"],
+
+	// Comment out the next line to run as root instead. Linux users, 
+	// update Dockerfile with your user's UID/GID if not 1000.
+	"runArgs": [
+		"--name=sample-python",
+		"-u", "vscode"
+	],
+
+	// Use 'settings' to set *default* container specific settings.json values on container create. 
+	// You can edit these settings after create using File > Preferences > Settings > Remote.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.linting.pylintEnabled": true,
+		"python.linting.pylintPath": "/usr/local/bin/pylint",
+		"python.linting.enabled": true
+	},
+
+	// Specifies a command to run after the container is created
+	"postCreateCommand": [
+		"sudo pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/",
+		"if [ ! -d /workspace/Sample-VSCode-Remote-Container ]; then cd /workspace ; sudo git clone https://github.com/Si-He-Xiang/Sample-VSCode-Remote-Container.git ; sudo chown -R vscode:vscode ./Sample-VSCode-Remote-Container ;  fi"
+	],
+
+	"extensions": [
+		"ms-python.python"
+	],
+
+	"workspaceMount":"type=volume,source=v-sample-python,destination=/workspace",
+	"workspaceFolder":"/workspace"
+}

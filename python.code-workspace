@@ -1,0 +1,29 @@
+{
+    "folders": [
+        {
+            "name": ".devcontainer",
+            "path": ".devcontainer"
+        },
+        {
+            "name": ".vscode",
+            "path": ".vscode"
+        },
+        {
+            "name": "client-web",
+            "path": "client-web"
+        },
+        {
+            "name": "service-archives",
+            "path": "service-archives"
+        },
+        {
+            "name": "service-seaweed",
+            "path": "service-seaweed"
+        }, 
+    ],
+    "settings": {
+        "docker.host": "tcp://192.168.99.100:2376",
+        "docker.tlsVerify": "1",
+        "docker.certPath": "C:\\Users\\shixiao\\.docker\\machine\\machines\\default"
+    }
+}
