@@ -12,7 +12,9 @@
 	// update Dockerfile with your user's UID/GID if not 1000.
 	"runArgs": [
 		"--name=sample-python",
-		"-u", "vscode"
+		"-u", "vscode",
+		"-v","v-sample-python-vscode-server:/home/vscode/.vscode-server",
+		"-v","v-sample-python-vscode-server-insiders:/home/vscode/.vscode-server-insiders",
 	],
 
 	// Use 'settings' to set *default* container specific settings.json values on container create. 
@@ -30,7 +32,7 @@
 		"sudo pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/",
 		"if [ ! -d /workspace/Sample-VSCode-Remote-Container ]; then cd /workspace ; sudo git clone https://github.com/Si-He-Xiang/Sample-VSCode-Remote-Container.git ; sudo chown -R vscode:vscode ./Sample-VSCode-Remote-Container ;  fi",
 		"cd /workspace/Sample-VSCode-Remote-Container",
-		"git checkout feature/sample-python"
+		"git checkout feature/sample-python",
 	
 	],
 

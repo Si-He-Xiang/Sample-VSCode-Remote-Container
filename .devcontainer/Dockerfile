@@ -37,7 +37,14 @@ RUN sed -i -e 's/\w\+\.debian\.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+USER ${USERNAME}
+
+RUN mkdir -p ~/.vscode-server ~/.vscode-server-insiders
+
+USER root
+
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=
 
+VOLUME [ "/workspace","" ]
 
