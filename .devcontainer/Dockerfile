@@ -37,9 +37,9 @@ RUN sed -i -e 's/\w\+\.debian\.org/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-USER ${USERNAME}
+# USER ${USERNAME}
 
-RUN mkdir -p ~/.vscode-server ~/.vscode-server-insiders
+# RUN mkdir -p ~/.vscode-server ~/.vscode-server-insiders
 
 USER root
 
