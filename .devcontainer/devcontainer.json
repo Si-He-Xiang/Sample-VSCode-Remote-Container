@@ -1,7 +1,7 @@
 {
 	"name": "Python Sample",
 	"image": "sample-python",
-	"dockerFile": "Dockerfile",
+	"dockerFile": "alpine.Dockerfile",
 
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
 	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
@@ -28,7 +28,7 @@
 	},
 
 	// Specifies a command to run after the container is created
-	"postCreateCommand": "git config --global user.email \"si_he_xiang@163.com\" && git config --global user.name \"SHX\" && if [ ! -d /workspace/Sample-VSCode-Remote-Container ]; then cd /workspace ; sudo git clone https://github.com/Si-He-Xiang/Sample-VSCode-Remote-Container.git ; sudo chown -R vscode:vscode ./Sample-VSCode-Remote-Container ;  fi && sudo pip install -r /workspace/Sample-VSCode-Remote-Container/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/",
+	"postCreateCommand": "git config --global user.email \"si_he_xiang@163.com\" && git config --global user.name \"SHX\" && if [ ! -d /workspace/Sample-VSCode-Remote-Container ]; then cd /workspace ; sudo git clone -b feature/sample-python  https://github.com/Si-He-Xiang/Sample-VSCode-Remote-Container.git ; sudo chown -R vscode:vscode ./Sample-VSCode-Remote-Container ; fi && sudo pip install -r /workspace/Sample-VSCode-Remote-Container/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/",
 
 	"extensions": [
 		"ms-python.python"
