@@ -38,5 +38,5 @@
 	],
 
 	"workspaceMount":"type=volume,source=v-sample-python,destination=/workspace",
-	"workspaceFolder":"/workspace"
+	"workspaceFolder":"/workspace/Sample-VSCode-Remote-Container"
 }
