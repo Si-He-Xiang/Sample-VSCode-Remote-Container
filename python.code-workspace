@@ -25,7 +25,7 @@
         "docker.tlsVerify": "1",
         // "docker.host": "tcp://192.168.99.100:2376",
         // "docker.certPath": "C:\\Users\\shixiao\\.docker\\machine\\machines\\default"
-        "docker.host": "tcp://192.168.99.122:2376",
+        "docker.host": "tcp://192.168.99.123:2376",
         "docker.certPath": "/Users/shixiao/.docker/machine/machines/default"
     }
 }

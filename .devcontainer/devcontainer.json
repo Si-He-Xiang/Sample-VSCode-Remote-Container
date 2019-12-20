@@ -20,7 +20,7 @@
 	// Use 'settings' to set *default* container specific settings.json values on container create. 
 	// You can edit these settings after create using File > Preferences > Settings > Remote.
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash",
+		"terminal.integrated.shell.linux": "/bin/zsh",
 		"python.pythonPath": "/usr/bin/python3",
 		"python.linting.pylintEnabled": true,
 		"python.linting.pylintPath": "/usr/bin/pylint",
@@ -28,12 +28,12 @@
 	},
 
 	// Specifies a command to run after the container is created
-	"postCreateCommand": "git config --global user.email \"si_he_xiang@163.com\" && git config --global user.name \"SHX\" && if [ ! -d /workspace/Sample-VSCode-Remote-Container ]; then cd /workspace ; sudo git clone -b feature/sample-python  https://github.com/Si-He-Xiang/Sample-VSCode-Remote-Container.git ; sudo chown -R vscode:vscode ./Sample-VSCode-Remote-Container ; fi && sudo pip install -r /workspace/Sample-VSCode-Remote-Container/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/",
+	// "postCreateCommand": "git config --global user.email \"si_he_xiang@163.com\" && git config --global user.name \"SHX\" && if [ ! -d /workspace/Sample-VSCode-Remote-Container ]; then cd /workspace ; sudo git clone -b feature/sample-python  https://github.com/Si-He-Xiang/Sample-VSCode-Remote-Container.git ; sudo chown -R vscode:vscode ./Sample-VSCode-Remote-Container ; fi && sudo pip install -r /workspace/Sample-VSCode-Remote-Container/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/",
 
 	"extensions": [
 		"ms-python.python"
 	],
 
-	"workspaceMount":"type=volume,source=v-sample-python,destination=/workspace",
-	"workspaceFolder":"/workspace/Sample-VSCode-Remote-Container"
+	// "workspaceMount":"type=volume,source=v-sample-python,destination=/workspace",
+	// "workspaceFolder":"/workspace/Sample-VSCode-Remote-Container"
 }

@@ -3,7 +3,7 @@
 # Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
 #-------------------------------------------------------------------------------------------------------------
 
-FROM alpine:3.10
+FROM alpine:3.8
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
@@ -29,6 +29,7 @@ RUN sed -i -e 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositori
         git \
         curl \
         python3 \
+        zsh \
     && curl https://bootstrap.pypa.io/get-pip.py| python3 - \
     # Install pylint
     && pip --disable-pip-version-check --no-cache-dir install pylint -i https://mirrors.aliyun.com/pypi/simple/ \
